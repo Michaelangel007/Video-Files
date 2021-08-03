@@ -40,19 +40,20 @@ public class SimplifiedScript : MonoBehaviour
                 for (int z = 1; z < Dimentions.z - 1; z++)
                 {
                     Vector3[] VertPos = new Vector3[8]{
-                        new Vector3(-1, 1, -1), new Vector3(-1, 1, 1),
-                        new Vector3(1, 1, 1), new Vector3(1, 1, -1),
-                        new Vector3(-1, -1, -1), new Vector3(-1, -1, 1),
-                        new Vector3(1, -1, 1), new Vector3(1, -1, -1),
+                        new Vector3(-1,  1, -1), new Vector3(-1,  1,  1),
+                        new Vector3( 1,  1,  1), new Vector3( 1,  1, -1),
+                        new Vector3(-1, -1, -1), new Vector3(-1, -1,  1),
+                        new Vector3( 1, -1,  1), new Vector3( 1, -1, -1),
                     };
 
                     int[,] Faces = new int[6, 9]{
-                        {0, 1, 2, 3, 0, 1, 0, 0, 0},     //top
-                        {7, 6, 5, 4, 0, -1, 0, 1, 0},   //bottom
-                        {2, 1, 5, 6, 0, 0, 1, 1, 1},     //right
-                        {0, 3, 7, 4, 0, 0, -1,  1, 1},   //left
-                        {3, 2, 6, 7, 1, 0, 0,  1, 1},    //front
-                        {1, 0, 4, 5, -1, 0, 0,  1, 1}    //back
+                    //  v0 v1 v2 v3   dx  dy  dz   uv1 uv2
+                        {0, 1, 2, 3,   0,  1,  0,   0, 0},   //top
+                        {7, 6, 5, 4,   0, -1,  0,   1, 0},   //bottom
+                        {2, 1, 5, 6,   0,  0,  1,   1, 1},   //right
+                        {0, 3, 7, 4,   0,  0, -1,   1, 1},   //left
+                        {3, 2, 6, 7,   1,  0,  0,   1, 1},   //front
+                        {1, 0, 4, 5,  -1,  0,  0,   1, 1}    //back
                     };
 
                     if (Voxels[x, y, z] == 1)
